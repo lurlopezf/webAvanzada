@@ -46,3 +46,17 @@ Respuesta:
 npm ci se debe ejecutar antes porque para ejecutar las pruebas primero se deben descargar las dependencias. Es como si intentaramos ejecutar un programa antes de tenerlo instalado, simplemente no tiene sentido.
 
 
+PD: sin querer en los pasos anteriores le di a merge en el pull request, por lo que he tenido crear otro Pull request y dejarlo abierto. 
+
+
+Pregunta 8 (3 pts). Después del push, indique qué etapa del pipeline falla y qué ocurre con las etapas siguientes
+
+Respuesta: 
+El fallo esta en el paso 4, es decir, al ejecutar las pruebas (npm test). La prueba esperaba encontrar "Titulo incorrecto" pero la pagina muestra "catalogo de recursos". Al fallar esto, se bloquea y se omiten los demas pasos
+
+
+Pregunta 9 (3 pts). ¿Debería integrarse este Pull Request a main mientras el pipeline está fallando? Justifique
+
+Respuesta:
+No. Justamente es esto para lo que sirve el CI/CD. Si le damos a merge cuando el pipeline esta fallando, sabemos que en la rama main dara ese mismo error, y por lo tanto sabemos que caera nuestra Web en produccion
+
